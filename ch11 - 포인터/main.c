@@ -10,6 +10,8 @@ int main(void) {
 	return 0;
 }
 
+
+
 int p1() {
 	int i = 20;
 	int* p = NULL;
@@ -21,6 +23,8 @@ int p1() {
 	printf("(*p)++= %d\n", (*p)++);
 	printf("++(*p) = %d\n", ++(*p));
 }
+
+
 
 void get_sum_diff(int x, int y, int* p_sum, int *p_diff) {
 	*p_sum = x + y;
@@ -35,6 +39,8 @@ int p2() {
 	printf("원소들의 합=  %d\n", sum);
 	printf("원소들의 차 = %d\n\n", diff);
 }
+
+
 
 void array_fill(int A[], int size) {
 	for (int i = 0;i < size;i++)
@@ -59,6 +65,8 @@ int p3() {
 	array_copy(arr, B, 10);
 	array_print(B, 10);
 }
+
+
 
 void array_add(int A[], int B[], int C[], int size) {
 	for (int i = 0;i < size;i++)
@@ -98,6 +106,9 @@ int p4() {
 
 	printf("봉급의 합은 %d, 보너스의 합은 %d, 총 액수는 %d\n\n", array_sum(A, 10), array_sum(B, 10), array_sum(C, 10));
 }
+
+
+
 
 void merge(int A[], int B[], int C[], int size){
 	for (int i = 0;i < size;i++)
