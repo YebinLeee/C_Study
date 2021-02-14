@@ -4,51 +4,58 @@
 #include <stdlib.h>
 
 int main(void) {
-	//p1(); // programming #1-5
-	//p2(); ´Ù½Ã ÇÏ±â
-	//p3();
-	//p4();
-	//p5();
-	//p6(); // p.531 ´Ü¾î°³¼ö ¼¼±â
-	//p7(); // strchr, strstr ÇÔ¼öÀÇ ¹İÈ¯°ª: ÁÖ¼Ò, strcat_s¿¡¼­ÀÇ ÀÎ¼ö
-	//p8(); // p.542-3 ¹®ÀÚ¿­-¼öÄ¡ º¯È¯(sprintf_s, scanf_s, atoi, atof)
-	//p9(); //¹®ÀÚ¿­ÀÇ ¹è¿­
-	//p10(); // p.546-7 ÇÑ¿µ»çÀü ±¸Çö(3Â÷¿ø ¹®ÀÚ¿­¹è¿­)
-	//p11(); // ¾ÏÈ£È­,º¹È£È­
-	//p12(); // p.549-10 Çà¸Ç °ÔÀÓ
-	//p13(); //p.554 exercise strcat_s»ç¿ë
+	// programming #1-4
+	p1(); // 
+	p2(); 
+	p3();
+	p4();
+	
+	p6(); // p.531 ë‹¨ì–´ê°œìˆ˜ ì„¸ê¸°
+	p7(); // strchr, strstr í•¨ìˆ˜ì˜ ë°˜í™˜ê°’: ì£¼ì†Œ, strcat_sì—ì„œì˜ ì¸ìˆ˜
+	p8(); // p.542-3 ë¬¸ìì—´-ìˆ˜ì¹˜ ë³€í™˜(sprintf_s, scanf_s, atoi, atof)
+	p9(); //ë¬¸ìì—´ì˜ ë°°ì—´
+	p10(); // p.546-7 í•œì˜ì‚¬ì „ êµ¬í˜„(3ì°¨ì› ë¬¸ìì—´ë°°ì—´)
+	p11(); // ì•”í˜¸í™”,ë³µí˜¸í™”
+	p12(); // p.549-10 í–‰ë§¨ ê²Œì„
+	p13(); //p.554 exercise strcat_sì‚¬ìš©
 
-	//p14(); // programming #6-16
-	//p15();
-	//p16();
-	//p17();
-	//p18();
-	//p19();
-	//p20();
-	//p21();
-	//p22();
-	//p23();
+	// programming #6-16
+	p14(); 
+	p15();
+	p16();
+	p17();
+	p18();
+	p19();
+	p20();
+	p21();
+	p22();
+	p23();
 	p24();
 	
 	
 	return 0;
 }
 
+
+
 int p1() {
 	char c;
-	printf("¹®ÀÚ¸¦ ÀÔ·ÂÇÏ½Ã¿À: ");
+	printf("ë¬¸ìë¥¼ ì…ë ¥í•˜ì‹œì˜¤: ");
 	scanf_s("%c", &c);
-	printf("¾Æ½ºÅ° ÄÚµå°ª=%d\n", c);
+	printf("ì•„ìŠ¤í‚¤ ì½”ë“œê°’=%d\n", c);
 }
+
 int p2() {
 	char str[100]="";
-	printf("°ø¹é ¹®ÀÚ°¡ ÀÖ´Â ¹®ÀÚ¿­À» ÀÔ·ÂÇÏ½Ã¿À : ");
+	printf("ê³µë°± ë¬¸ìê°€ ìˆëŠ” ë¬¸ìì—´ì„ ì…ë ¥í•˜ì‹œì˜¤ : ");
 	gets(str);
 	for (int i = 0;str[i] != NULL;i++) {
 		if (str[i] == ' ') continue;
 		else printf("%c",str[i]);
 	}
 }
+
+
 int str_chr(char* s, int c) {
 	int n = 0;
 	for (int i = 0;s[i] != NULL;i++)
@@ -57,30 +64,31 @@ int str_chr(char* s, int c) {
 }
 int p3() {
 	char s[50] = "", ch=NULL;
-	printf("¹®ÀÚ¿­ ÀÔ·ÂÇÏ½Ã¿À : ");
+	printf("ë¬¸ìì—´ ì…ë ¥í•˜ì‹œì˜¤ : ");
 	gets(s);
-	printf("°³¼ö¸¦ ¼¿ ¹®ÀÚ¸¦ ÀÔ·ÂÇÏ½Ã¿À : ");
+	printf("ê°œìˆ˜ë¥¼ ì…€ ë¬¸ìë¥¼ ì…ë ¥í•˜ì‹œì˜¤ : ");
 	scanf_s("%c", &ch);
-	printf("%cÀÇ °³¼ö : %d\n", ch, str_chr(s, ch));
+	printf("%cì˜ ê°œìˆ˜ : %d\n", ch, str_chr(s, ch));
 }
+
 
 int p4() {
 	char s[20] = "";
-	printf("¹®ÀÚ¿­À» ÀÔ·ÂÇÏ½Ã¿À : ");
+	printf("ë¬¸ìì—´ì„ ì…ë ¥í•˜ì‹œì˜¤ : ");
 	gets(s);
 	for (char c = 'a';c <= 'z';c++)
 		printf("%c : %d\n", c, str_chr(s, c));
 }
+ 
 
-int p5() {
-}
+
 
 int count_word(char* s);
 int p6() {
 	char s[50];
-	printf("¹®ÀÚ¿­ ÀÔ·ÂÇÏ½Ã¿À : ");
+	printf("ë¬¸ìì—´ ì…ë ¥í•˜ì‹œì˜¤ : ");
 	gets(s);
-	printf("¹®ÀÚÀÇ °³¼ö´Â %d\n", count_word(s));
+	printf("ë¬¸ìì˜ ê°œìˆ˜ëŠ” %d\n", count_word(s));
 }
 int count_word(char* s) {
 	int cnt = 0, waiting = 1;
@@ -97,24 +105,28 @@ int count_word(char* s) {
 	return cnt;
 }
 
+
+
 int p7() {
 	char str[] = "dog";
 	char* p = strchr(str, 'g');
 	printf("%u %s %u %s\n", str,str, p,p);
 	
 	int loc = (int)(p - str);
-	printf("%s°¡ %sÀÇ %d¹øÂ°¿¡ Á¸Àç\n", p, str, loc);
+	printf("%sê°€ %sì˜ %dë²ˆì§¸ì— ì¡´ì¬\n", p, str, loc);
 
 	char* ps = strstr(str, "og");
 	printf("%u %s %u %s\n", str, str, ps, ps);
 	loc = (int)(ps - p);
-	printf("%s°¡ %sÀÇ %d¹øÂ°¿¡ Á¸Àç\n", ps, str, loc);
+	printf("%sê°€ %sì˜ %dë²ˆì§¸ì— ì¡´ì¬\n", ps, str, loc);
 
 	char dst[100] = "hi ";
 	char cpy[5] = "dog";
 	strcat_s(dst, 8,cpy);
 	printf("%s\n", dst);
 }
+
+
 
 int p8() {
 	char filename[100]="";
@@ -138,9 +150,11 @@ int p8() {
 	double result = i + d;
 	char buffer[50];
 	sprintf_s(buffer, 50, "%f", result);
-	printf("°á°ú°ª : %s\n", buffer);
+	printf("ê²°ê³¼ê°’ : %s\n", buffer);
 	
 }
+
+
 
 int p9() {
 	char* s[3] = { "init", "open","close" };
@@ -151,15 +165,17 @@ int p9() {
 	}
 }
 
+
+
 #define WORDS 5
 int p10() {
 	int i, index;
 	char dic[WORDS][2][30] = {
-		{"book","Ã¥"},
-		{"boy","¼Ò³â"},
-		{"computer","ÄÄÇ»ÅÍ"},
-		{"language","¾ğ¾î"},
-		{"rain","ºñ"},
+		{"book","ì±…"},
+		{"boy","ì†Œë…„"},
+		{"computer","ì»´í“¨í„°"},
+		{"language","ì–¸ì–´"},
+		{"rain","ë¹„"},
 	};
 	char word[30];
 
@@ -167,7 +183,7 @@ int p10() {
 		printf("%s\n", dic[i]);
 	}
 
-	printf("´Ü¾î ÀÔ·Â : ");
+	printf("ë‹¨ì–´ ì…ë ¥ : ");
 	scanf_s("%s", word, 30);
 
 	index = 0;
@@ -177,8 +193,11 @@ int p10() {
 			return 0;
 		}
 	}
-	printf("»çÀü¿¡¼­ ¹ß°ßµÇÁö ¾Ê¾Ò½À´Ï´Ù.\n");
+	printf("ì‚¬ì „ì—ì„œ ë°œê²¬ë˜ì§€ ì•Šì•˜ìŠµë‹ˆë‹¤.\n");
 }
+
+
+
 
 void encrypt(char* cipher, int shift) {
 	for (int i = 0;cipher[i] != NULL;i++) {
@@ -188,7 +207,7 @@ void encrypt(char* cipher, int shift) {
 				cipher -= 26;
 		}
 	}
-	printf("¾ÏÈ£È­µÈ ¹®ÀÚ¿­ : %s\n", cipher);
+	printf("ì•”í˜¸í™”ëœ ë¬¸ìì—´ : %s\n", cipher);
 };
 void decrypt(char* cipher, int shift) {
 	for (int i = 0;cipher[i] != NULL;i++) {
@@ -198,33 +217,35 @@ void decrypt(char* cipher, int shift) {
 				cipher += 26;
 		}
 	}
-	printf("º¹È£È­µÈ ¹®ÀÚ¿­ : %s\n", cipher);
+	printf("ë³µí˜¸í™”ëœ ë¬¸ìì—´ : %s\n", cipher);
 };
 void menu() {
 	printf("-----------\n");
-	printf("1. ¾ÏÈ£È­\n2.º¹È£È­\n");
+	printf("1. ì•”í˜¸í™”\n2.ë³µí˜¸í™”\n");
 	printf("-----------\n");
 }
 int p11() {
 	char s[50];
 	int shift = 3, choice;
 
-	printf("¹®ÀÚ¿­ ÀÔ·Â : ");
+	printf("ë¬¸ìì—´ ì…ë ¥ : ");
 	gets(s);
 	
 	void menu();
 	while (1) {
-		printf("¸Ş´º¸¦ ¼±ÅÃÇÏ½Ã¿À(Á¾·á´Â 3) : ");
+		printf("ë©”ë‰´ë¥¼ ì„ íƒí•˜ì‹œì˜¤(ì¢…ë£ŒëŠ” 3) : ");
 		scanf_s("%d", &choice);
 		if (choice == 3) break;
 		switch (choice) {
 		case 1:encrypt(s, 3);break;
 		case 2:decrypt(s, 3);break;
-		default:printf("Àß¸ø ÀÔ·ÂÇÏ¼Ì½À´Ï´Ù.\n");break;
+		default:printf("ì˜ëª» ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤.\n");break;
 		}
 	}
 	
 }
+
+
 
 #include <time.h>
 void draw_line(char sln[], char answer[]) {
@@ -260,13 +281,15 @@ int p12() {
 	printf("%s\n", answer);
 
 	while (1) {
-		printf("±ÛÀÚ¸¦ ÃßÃøÇÏ½Ã¿À: ");
+		printf("ê¸€ìë¥¼ ì¶”ì¸¡í•˜ì‹œì˜¤: ");
 		ch = getchar();
 		if ((check(solution, answer, ch)) == 1) break;
 		getchar();
 	}
 	printf("%s\n", answer);
 }
+
+
 
 int p13() {
 	char s1[] = "Hi! ";
@@ -277,17 +300,21 @@ int p13() {
 	printf(s3);
 }
 
+
+
 void str_upper(char* s) {
 	for (int i = 0;s[i] != NULL;i++)
 		s[i] = toupper(s[i]);
 }
 int p14() {
 	char s[20];
-	printf("¹®ÀÚ¿­À» ÀÔ·ÂÇÏ½Ã¿À: ");
+	printf("ë¬¸ìì—´ì„ ì…ë ¥í•˜ì‹œì˜¤: ");
 	gets(s);
 	str_upper(s);
-	printf("º¯È¯µÈ ¹®ÀÚ¿­: %s\n", s);
+	printf("ë³€í™˜ëœ ë¬¸ìì—´: %s\n", s);
 }
+
+
 
 int get_response(char* prompt) {
 	for (int i = 0;prompt[i] != NULL;i++)
@@ -304,14 +331,16 @@ int p15() {
 	char ans[10];
 	int result;
 
-	printf("°ÔÀÓÀ» ÇÏ½Ã°Ú½À´Ï±î ? ");
+	printf("ê²Œì„ì„ í•˜ì‹œê² ìŠµë‹ˆê¹Œ ? ");
 	gets(ans);
 	
 	result = get_response(ans);
-	if (result == 0) printf("ºÎÁ¤ÀûÀÎ ´äº¯\n");
-	else if (result == 1) printf("±àÁ¤ÀûÀÎ ´äº¯\n");
-	else printf("¿À·ù ¹ß»ı\n");
+	if (result == 0) printf("ë¶€ì •ì ì¸ ë‹µë³€\n");
+	else if (result == 1) printf("ê¸ì •ì ì¸ ë‹µë³€\n");
+	else printf("ì˜¤ë¥˜ ë°œìƒ\n");
 }
+
+
 
 int p16() {
 	char s[20];
@@ -319,7 +348,7 @@ int p16() {
 	char seps[] = " ";
 	int cnt = 0;
 
-	printf("¹®ÀÚ¿­À» ÀÔ·ÂÇÏ½Ã¿À: ");
+	printf("ë¬¸ìì—´ì„ ì…ë ¥í•˜ì‹œì˜¤: ");
 	gets(s);
 
 	token = strtok_s(s, seps, &next_token);
@@ -328,28 +357,32 @@ int p16() {
 		token = strtok_s(NULL, seps, &next_token);
 	}
 
-	printf("´Ü¾îÀÇ ¼ö´Â %dÀÔ´Ï´Ù.\n", cnt);
+	printf("ë‹¨ì–´ì˜ ìˆ˜ëŠ” %dì…ë‹ˆë‹¤.\n", cnt);
 }
+
+
 
 int p17() {
 	char s[20] = "";
 	int i = 0;
 
-	printf("ÅØ½ºÆ®¸¦ ÀÔ·ÂÇÏ½Ã¿À : ");
+	printf("í…ìŠ¤íŠ¸ë¥¼ ì…ë ¥í•˜ì‹œì˜¤ : ");
 	gets(s);
 
 	if(islower(s[i])) s[i]=toupper(s[i]);
 	if (s[strlen(s)-1] != '.') s[strlen(s)] = '.';
 	s[strlen(s) + 1] = NULL;
 
-	printf("¼öÁ¤µÈ ÅØ½ºÆ®: %s\n", s);
+	printf("ìˆ˜ì •ëœ í…ìŠ¤íŠ¸: %s\n", s);
 }
+
+
 
 int p18() {
 	char s[20];
 	int check = 0;
 
-	printf("¹®ÀÚ¿­À» ÀÔ·ÂÇÏ½Ã¿À : ");
+	printf("ë¬¸ìì—´ì„ ì…ë ¥í•˜ì‹œì˜¤ : ");
 	gets(s);
 
 	for (int i = 0;s[i] != NULL;i++)
@@ -360,9 +393,11 @@ int p18() {
 			break;
 		}
 	}
-	if (check==1) printf("È¸¹® ¹®ÀÚ°¡ ¾Æ´Õ´Ï´Ù.\n");
-	else printf("È¸¹® ¹®ÀÚÀÔ´Ï´Ù.\n");
+	if (check==1) printf("íšŒë¬¸ ë¬¸ìê°€ ì•„ë‹™ë‹ˆë‹¤.\n");
+	else printf("íšŒë¬¸ ë¬¸ìì…ë‹ˆë‹¤.\n");
 }
+
+
 
 int p19() {
 	char s[20];
@@ -370,7 +405,7 @@ int p19() {
 	char seps[] = " ";
 	int n = 0;
 
-	printf("¹®ÀÚ¿­À» ÀÔ·ÂÇÏ½Ã¿À: ");
+	printf("ë¬¸ìì—´ì„ ì…ë ¥í•˜ì‹œì˜¤: ");
 	gets(s);
 
 	token = strtok_s(s, seps, &next_token);
@@ -387,12 +422,14 @@ int p19() {
 	printf("\n");
 }
 
+
+
 int p20() {
 	char name[20];
 	char* surname, * mainname;
 	char* token = NULL, * next = NULL, seps[] = " ";
 
-	printf("¼º°ú ÀÌ¸§À» ´ë¹®ÀÚ·Î ÀÔ·ÂÇÏ½Ã¿À: ");
+	printf("ì„±ê³¼ ì´ë¦„ì„ ëŒ€ë¬¸ìë¡œ ì…ë ¥í•˜ì‹œì˜¤: ");
 	gets(name);
 	
 	for (int i = 0;name[i] != NULL;i++)
@@ -406,29 +443,33 @@ int p20() {
 	printf("%s, %s\n", mainname, surname);
 }
 
+
+
 int p21() {
 	char s[20];
 	int cnt = 0;
 
-	printf("¹®ÀÚ¿­À» ÀÔ·ÂÇÏ½Ã¿À : ");
+	printf("ë¬¸ìì—´ì„ ì…ë ¥í•˜ì‹œì˜¤ : ");
 	gets(s);
 
 	for (int i = 0;s[i] != NULL;i++)
 		if (s[i] == '.' || s[i] == ',')
 			cnt++;
-	printf("±¸µÎÁ¡ÀÇ °³¼ö´Â %dÀÔ´Ï´Ù.\n", cnt);
+	printf("êµ¬ë‘ì ì˜ ê°œìˆ˜ëŠ” %dì…ë‹ˆë‹¤.\n", cnt);
 }
+
+
 
 int p22() {
 	char s[80], target[10], change[10], new[80]="";
 	char* token = NULL, * next = NULL;
 	char seps[] = " ";
 
-	printf("¹®ÀÚ¿­À» ÀÔ·ÂÇÏ½Ã¿À : ");
+	printf("ë¬¸ìì—´ì„ ì…ë ¥í•˜ì‹œì˜¤ : ");
 	gets(s);
-	printf("Ã£À» ¹®ÀÚ¿­: ");
+	printf("ì°¾ì„ ë¬¸ìì—´: ");
 	gets(target);
-	printf("¹Ù²Ü ¹®ÀÚ¿­: ");
+	printf("ë°”ê¿€ ë¬¸ìì—´: ");
 	gets(change);
 
 	token = strtok_s(s, seps, &next);
@@ -438,29 +479,34 @@ int p22() {
 		strcat_s(new, 80, " ");
 		token = strtok_s(NULL, seps, &next);
 	}
-	printf("¼öÁ¤µÈ ¹®ÀÚ¿­: %s\n", new);
+	printf("ìˆ˜ì •ëœ ë¬¸ìì—´: %s\n", new);
 }
+
+
+
 
 int p23() {
 	char s[5];
 	int x, y, result = 0;
 
-	printf("¿¬»êÀ» ÀÔ·ÂÇÏ½Ã¿À : ");
+	printf("ì—°ì‚°ì„ ì…ë ¥í•˜ì‹œì˜¤ : ");
 	scanf_s("%s %d %d", s, 5, &x, &y);
 	if (strcmp(s,"add") == 0) result = x + y;
 	else if (strcmp(s, "sub") == 0)result = x - y;
 	else if (strcmp(s, "mul") == 0)result = x * y;
 	else if (strcmp(s, "div") == 0)result = x / y;
-	else printf("Àß¸ø ÀÔ·ÂÇÏ¼Ì½À´Ï´Ù.\n");
+	else printf("ì˜ëª» ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤.\n");
 
-	printf("¿¬»êÀÇ °á°ú : %d\n", result);
+	printf("ì—°ì‚°ì˜ ê²°ê³¼ : %d\n", result);
 }
+
+
 
 int p24() {
 	char s[30];
 	char* p = NULL, *p2=NULL;
 	
-	printf("±¤°íÇÏ°í ½ÍÀº ÅØ½ºÆ®¸¦ ÀÔ·ÂÇÏ½Ã¿À: ");
+	printf("ê´‘ê³ í•˜ê³  ì‹¶ì€ í…ìŠ¤íŠ¸ë¥¼ ì…ë ¥í•˜ì‹œì˜¤: ");
 	gets(s);
 	p = s, p2=s;
 
