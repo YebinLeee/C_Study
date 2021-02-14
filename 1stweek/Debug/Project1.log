@@ -1,0 +1,19 @@
+﻿  project.c
+C:\Users\이예빈\Desktop\학교\C프로그래밍활용실습\Visual Studio\Project1\project.c(14,4): warning C4013: 'p8'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+C:\Users\이예빈\Desktop\학교\C프로그래밍활용실습\Visual Studio\Project1\project.c(25,1): warning C4305: '초기화 중': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\이예빈\Desktop\학교\C프로그래밍활용실습\Visual Studio\Project1\project.c(40,10): warning C4473: 'scanf_s': 서식 문자열에 대한 인수가 충분하게 전달되지 않았습니다.
+C:\Users\이예빈\Desktop\학교\C프로그래밍활용실습\Visual Studio\Project1\project.c(40,10): message : 자리 표시자 및 해당 매개 변수에는 variadic 인수가 2개 필요하지만 1개가 제공되었습니다.
+C:\Users\이예빈\Desktop\학교\C프로그래밍활용실습\Visual Studio\Project1\project.c(40,10): message : 누락된 variadic 인수 2이(가) 서식 문자열 '%c'에 필요합니다.
+C:\Users\이예빈\Desktop\학교\C프로그래밍활용실습\Visual Studio\Project1\project.c(40,10): message : 이 인수는 버퍼 크기로 사용됩니다.
+C:\Users\이예빈\Desktop\학교\C프로그래밍활용실습\Visual Studio\Project1\project.c(106,10): warning C4473: 'scanf_s': 서식 문자열에 대한 인수가 충분하게 전달되지 않았습니다.
+C:\Users\이예빈\Desktop\학교\C프로그래밍활용실습\Visual Studio\Project1\project.c(106,10): message : 자리 표시자 및 해당 매개 변수에는 variadic 인수가 2개 필요하지만 1개가 제공되었습니다.
+C:\Users\이예빈\Desktop\학교\C프로그래밍활용실습\Visual Studio\Project1\project.c(106,10): message : 누락된 variadic 인수 2이(가) 서식 문자열 '%c'에 필요합니다.
+C:\Users\이예빈\Desktop\학교\C프로그래밍활용실습\Visual Studio\Project1\project.c(106,10): message : 이 인수는 버퍼 크기로 사용됩니다.
+C:\Users\이예빈\Desktop\학교\C프로그래밍활용실습\Visual Studio\Project1\project.c(28): warning C4716: 'p2': 값을 반환해야 합니다.
+C:\Users\이예빈\Desktop\학교\C프로그래밍활용실습\Visual Studio\Project1\project.c(21): warning C4716: 'p1': 값을 반환해야 합니다.
+C:\Users\이예빈\Desktop\학교\C프로그래밍활용실습\Visual Studio\Project1\project.c(35): warning C4716: 'p3': 값을 반환해야 합니다.
+C:\Users\이예빈\Desktop\학교\C프로그래밍활용실습\Visual Studio\Project1\project.c(42): warning C4716: 'p4': 값을 반환해야 합니다.
+C:\Users\이예빈\Desktop\학교\C프로그래밍활용실습\Visual Studio\Project1\project.c(52): warning C4716: 'p5': 값을 반환해야 합니다.
+C:\Users\이예빈\Desktop\학교\C프로그래밍활용실습\Visual Studio\Project1\project.c(101): warning C4716: 'p7': 값을 반환해야 합니다.
+C:\Users\이예빈\Desktop\학교\C프로그래밍활용실습\Visual Studio\Project1\project.c(114): warning C4716: 'p8': 값을 반환해야 합니다.
+  Project1.vcxproj -> C:\Users\이예빈\Desktop\학교\C프로그래밍활용실습\Visual Studio\Project1\Debug\복습.exe

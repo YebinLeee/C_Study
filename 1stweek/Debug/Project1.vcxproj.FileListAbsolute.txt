@@ -1,0 +1,2 @@
+C:\Users\이예빈\Desktop\학교\C프로그래밍활용실습\Visual Studio\Project1\Debug\복습.exe
+C:\Users\이예빈\Desktop\학교\C프로그래밍활용실습\Visual Studio\Project1\Debug\복습.pdb
