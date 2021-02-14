@@ -4,29 +4,31 @@
 #include <stdlib.h>
 
 int main(void) {
-	// programming #1-4
-	p1(); // 
-	p2(); 
-	p3();
-	p4();
 	
-	p6(); // p.531 단어개수 세기
-	p7(); // strchr, strstr 함수의 반환값: 주소, strcat_s에서의 인수
+	// programming #1-4
+	p1(); // 문자에서 아스키 코드로
+	p2(); // 문자열 입력 받아 공백 제거하여 다시 출력
+	p3(); // 문자열에서 탐색하고자 하는 문자의 개수 출력
+	p4(); // 문자열에서 소문자의 개수 출력
+	
+	p6(); // p.531 단어 개수 세기
+	p7(); // strchr() & strstr() 함수의 반환값: 찾은 첫 문자의 주소 / strcat_s() 에서의 인수
 	p8(); // p.542-3 문자열-수치 변환(sprintf_s, scanf_s, atoi, atof)
-	p9(); //문자열의 배열
-	p10(); // p.546-7 한영사전 구현(3차원 문자열배열)
-	p11(); // 암호화,복호화
-	p12(); // p.549-10 행맨 게임
-	p13(); //p.554 exercise strcat_s사용
+	p9(); // 포인터 배열(문자열의 배열=상수값으로 저장)과 문자열 바꾸기
+	p10(); // p.546-7 한영사전 구현(다차원 포인터 배열 활용 - 3차원 문자열배열)
+	p11(); // 메뉴 입력 받아 암호화 & 복호화 실행 
+	p12(); // p.549-10 행맨 게임 - 문자열 배열에서 랜덤으로 하나의 문자열 선정. 문자를 입력해 일정 횟수 내에 맞추는 게임
+	p13(); //p.554 exercise strcat_s() 함수 이용 - 문자열 이어 붙이기
 
 	// programming #6-16
-	p14(); 
-	p15();
-	p16();
-	p17();
-	p18();
-	p19();
-	p20();
+	p14(); // 문자열 입력 받아 모든 문자를 대문자로 변환
+	p15(); // 입력 받은 문자열 체크 
+	p16(); // 문자열 입력 받아 단어 개수 구하기 - strtok_s() 함수 이용해서 단어를 각 토큰으로 쪼개기. 
+	p17(); // 문자열 입력 받아 소문자는 대문자로 변환하고, 끝에 마침표 없는 경우 추가하기. (문자열 마지막에 NULL값)
+	p18(); // 회문 문자 판별 - for문 이용하여 문장차례로 한 글자씩 비교
+	p19(); // 문자열 입력 받아 각 토큰으로 나누고 역순으로 각 단어 출력(포인터배열 이용)
+	## 재귀함수로도 도전해보기
+	p20(); // 
 	p21();
 	p22();
 	p23();
@@ -267,16 +269,15 @@ int check(char *s, char *answer, char ch) {
 }
 int p12() {
 	srand((unsigned)time(NULL));
-	char *s[7]= {"God is everything is my life",
+	char *s[6]= {"Music is my life",
 		"I love you so much",
 		"Thanks for everything",
 		"How great is our God",
-		"God loves you so much",
 		"With God, I can do everything",
 		"With God, there is nothing I can't do"	};
 	char solution[100], answer[100], ch;;
 	
-	strcpy_s(solution, 100, s[rand()%5]);
+	strcpy_s(solution, 100, s[rand()%6]);
 	draw_line(solution,answer);
 	printf("%s\n", answer);
 
