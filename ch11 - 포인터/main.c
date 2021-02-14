@@ -1,13 +1,15 @@
 #include <stdio.h>
+
 int main(void) {
-	//p1();
-	p2();
-	p3();
-	p4();
-	p5();
+	p1(); // í¬ì¸í„° ì „ìœ„, í›„ìœ„ ì—°ì‚°ì ë§ì…ˆê³¼ ëº„ì…ˆ
+	p2(); // í•¨ìˆ˜ì˜ ë§¤ê°œë³€ìˆ˜ë¡œì¨ì˜ í¬ì¸í„°
+	p3(); // í•¨ìˆ˜ì˜ ë§¤ê°œë³€ìˆ˜ë¡œì¨ì˜ í¬ì¸í„°/ë°°ì—´
+	p4(); // ì§ì›ì˜ ì›”ê¸‰ê³¼ ë³´ë„ˆìŠ¤ë¥¼ ë‚œìˆ˜ë¡œ ìƒì„±í•˜ì—¬ ë°°ì—´(í¬ì¸í„°)ì— ì €ì¥í•˜ê³ , ê·¸ í•©ì„ êµ¬í•˜ì—¬ ìƒˆë¡œìš´ ë°°ì—´ ìƒì„± & íƒìƒ‰
+	p5(); // ë°°ì—´/í¬ì¸í„° ìˆœì°¨ íƒìƒ‰
 
 	return 0;
 }
+
 int p1() {
 	int i = 20;
 	int* p = NULL;
@@ -26,12 +28,12 @@ void get_sum_diff(int x, int y, int* p_sum, int *p_diff) {
 }
 int p2() {
 	int sum, diff, x, y;
-	printf("µÎ Á¤¼ö ÀÔ·Â: ");
+	printf("ë‘ ì •ìˆ˜ ì…ë ¥: ");
 	scanf_s("%d %d", &x, &y);
 
 	get_sum_diff(x, y, &sum, &diff);
-	printf("¿ø¼ÒµéÀÇ ÇÕ=  %d\n", sum);
-	printf("¿ø¼ÒµéÀÇ Â÷ = %d\n\n", diff);
+	printf("ì›ì†Œë“¤ì˜ í•©=  %d\n", sum);
+	printf("ì›ì†Œë“¤ì˜ ì°¨ = %d\n\n", diff);
 }
 
 void array_fill(int A[], int size) {
@@ -86,15 +88,15 @@ int p4() {
 	array_print(A, 10);
 
 	int n;
-	printf("°Ë»öÇÏ°í ½ÍÀº ºÀ±Ş? : ");
+	printf("ê²€ìƒ‰í•˜ê³  ì‹¶ì€ ë´‰ê¸‰? : ");
 	scanf_s("%d", &n);
-	printf("¿ù±ŞÀÌ %d¸¸¿øÀÎ »ç¶÷ÀÇ ÀÎµ¦½º = %d\n", n, search(A,10,n));
+	printf("ì›”ê¸‰ì´ %dë§Œì›ì¸ ì‚¬ëŒì˜ ì¸ë±ìŠ¤ = %d\n", n, search(A,10,n));
 
 	array_print(B, 10);
 	array_add(A, B, C, 10);	
 	array_print(C, 10);
 
-	printf("ºÀ±ŞÀÇ ÇÕÀº %d, º¸³Ê½ºÀÇ ÇÕÀº %d, ÃÑ ¾×¼ö´Â %d\n\n", array_sum(A, 10), array_sum(B, 10), array_sum(C, 10));
+	printf("ë´‰ê¸‰ì˜ í•©ì€ %d, ë³´ë„ˆìŠ¤ì˜ í•©ì€ %d, ì´ ì•¡ìˆ˜ëŠ” %d\n\n", array_sum(A, 10), array_sum(B, 10), array_sum(C, 10));
 }
 
 void merge(int A[], int B[], int C[], int size){
