@@ -5,60 +5,65 @@
 #include <string.h>
 
 int main(void) {
-	//p1(); // p.570 µÎ Á¡ »çÀÌÀÇ °Å¸®
-	//p2(); // p.572 ±¸Á¶Ã¼ ¾ÈÀÇ ±¸Á¶Ã¼
-	/* p3(); // programming #1-11, 13, 14
-	p4();
-	p5();
-	p6();
-	p7();
-	p8();
-	p9(); */
-
-	/*p10();
-	p11();
-	p12();*/
-	//p13();
-	//p14();
 	
-	char s[20];
-	scanf_s("%[^abc]", s,20);
-	printf(s);
+	p1(); // p.570 êµ¬ì¡°ì²´ ë©¤ë²„ ì°¸ì¡° - ê° ì¢Œí‘œ ì…ë ¥ ë°›ì•„ ë‘ ì  ì‚¬ì´ì˜ ê±°ë¦¬ êµ¬í•˜ê¸°
+	p2(); // p.572 êµ¬ì¡°ì²´ ì•ˆì˜ êµ¬ì¡°ì²´ - ê° ì¢Œí‘œ ì…ë ¥ ë°›ì•„ ì‚¬ê°í˜•ì˜ ë©´ì ê³¼ ë‘˜ë ˆ êµ¬í•˜ê¸°
+	
+	// programming #1-11, 13, 14
+	
+	p3(); // êµ¬ì¡°ì²´ ì°¸ì¡° - ì±…
+	p4(); // êµ¬ì¡°ì²´ ì•ˆì˜ êµ¬ì¡°ì²´ ë©¤ë²„ - account
+	p5(); // êµ¬ì¡°ì²´ ì•ˆì˜ êµ¬ì¡°ì²´  - ë©”ì¼
+	p6(); // êµ¬ì¡°ì²´ì™€ í•¨ìˆ˜ ë§¤ê°œë³€ìˆ˜ - ë³µì†Œìˆ˜
+	p7(); // êµ¬ì¡°ì²´ í¬ì¸í„° ë§¤ê°œë³€ìˆ˜ - ë™ì¼í•œ ì¢Œí‘œì¸ì§€ íŒë³„
+	p8(); // êµ¬ì¡°ì²´ì™€ í•¨ìˆ˜ - ì¢Œí‘œ ì…ë ¥ ë°›ì•„ ì‚¬ë¶„ë©´ êµ¬í•˜ê¸°
+	p9(); // êµ¬ì¡°ì²´ì™€ í•¨ìˆ˜ - ì›ì˜ ë©´ì , ë‘˜ë ˆ êµ¬í•˜ê¸°
+	p10(); // êµ¬ì¡°ì²´ ë°°ì—´ - ìŒì‹ì˜ ì´ ì¹¼ë¡œë¦¬ êµ¬í•˜ê¸°
+	p11(); // êµ¬ì¡°ì²´ ë°°ì—´ - 2,30 ëŒ€ ì§ì›ì˜ ì •ë³´ ì¶œë ¥
+	p12(); // êµ¬ì¡°ì²´ ë°°ì—´ê³¼ íƒìƒ‰ - ì…ë ¥ ë°›ì•„ êµ¬ì¡°ì²´ ì €ì¥í•˜ê³  íƒìƒ‰ ëŒ€ìƒ ì¶œë ¥(strcmp ë¬¸ìì—´ ì²˜ë¦¬ í•¨ìˆ˜)
+	p13(); // typedef, union ê³µìš©ì²´, enum - í•´ë‹¹í•˜ëŠ” ë„í˜•ì˜ ë©´ì  êµ¬í•˜ê¸°
+	p14(); // ì†Œê·œëª¨ì˜ ìŒë°˜ ë°ì´í„°ë² ì´ìŠ¤ ë§Œë“¤ê¸° - ìŒë°˜ ì¶”ê°€, ì¶œë ¥, íƒìƒ‰, ì‚­ì œ (êµ¬ì¡°ì²´ í•¨ìˆ˜/ë¬¸ìì—´ ì²˜ë¦¬ ë¼ì´ë¸ŒëŸ¬ë¦¬ í•¨ìˆ˜ ì‘ìš©)
+	
 	return 0;
 }
+
+
 
 typedef struct {
 	int x, y;
 }POINT;
+
 int p1() {
 	POINT p1, p2;
 	int xdiff, ydiff;
 	double length;
 
-	printf("Á¡ÀÇ ÁÂÇ¥¸¦ ÀÔ·ÂÇÏ½Ã¿À: ");
+	printf("ì ì˜ ì¢Œí‘œë¥¼ ì…ë ¥í•˜ì‹œì˜¤: ");
 	scanf_s("%d %d", &p1.x, &p1.y);
-	printf("Á¡ÀÇ ÁÂÇ¥¸¦ ÀÔ·ÂÇÏ½Ã¿À: ");
+	printf("ì ì˜ ì¢Œí‘œë¥¼ ì…ë ¥í•˜ì‹œì˜¤: ");
 	scanf_s("%d %d", &p2.x, &p2.y);
 
 	xdiff = p1.x - p2.x;
 	ydiff = p1.y - p2.y;
 
 	length = sqrt((double)(xdiff * xdiff + ydiff * ydiff));
-	printf("°Å¸®´Â %fÀÔ´Ï´Ù.\n", length);
+	printf("ê±°ë¦¬ëŠ” %fì…ë‹ˆë‹¤.\n", length);
 	
 }
+
 
 typedef struct rect{
 	POINT a;
 	POINT b;
 }RECT;
+
 int p2() {
 	RECT rec;
 	int w, h;
 
-	printf("¿ŞÂÊ »ó´ÜÀÇ ÁÂÇ¥¸¦ ÀÔ·ÂÇÏ½Ã¿À : ");
+	printf("ì™¼ìª½ ìƒë‹¨ì˜ ì¢Œí‘œë¥¼ ì…ë ¥í•˜ì‹œì˜¤ : ");
 	scanf_s("%d %d", &rec.a.x, &rec.a.y);
-	printf("¿À¸¥ÂÊ ÇÏ´ÜÀÇ ÁÂÇ¥¸¦ ÀÔ·ÂÇÏ½Ã¿À :");
+	printf("ì˜¤ë¥¸ìª½ í•˜ë‹¨ì˜ ì¢Œí‘œë¥¼ ì…ë ¥í•˜ì‹œì˜¤ :");
 	scanf_s("%d %d", &rec.b.x, &rec.b.y);
 
 	w = rec.b.x - rec.a.x;
@@ -66,8 +71,9 @@ int p2() {
 	h = rec.a.y - rec.b.y;
 	if (h < 0)h = -h;
 
-	printf("¸éÀûÀº %dÀÌ°í µÑ·¹´Â %dÀÔ´Ï´Ù.\n", w * h, 2*(w + h));
+	printf("ë©´ì ì€ %dì´ê³  ë‘˜ë ˆëŠ” %dì…ë‹ˆë‹¤.\n", w * h, 2*(w + h));
 }
+
 
 struct book {
 	int id;
@@ -75,22 +81,29 @@ struct book {
 	char author[20];
 };
 int p3() {
-	struct book b = { 1,"¹Ù¶÷°ú ÇÔ²² »ç¶óÁö´Ù", "¸¶°¡·¿ ¹ÌÃ¿" };
+	struct book b = { 1,"ë°”ëŒê³¼ í•¨ê»˜ ì‚¬ë¼ì§€ë‹¤", "ë§ˆê°€ë › ë¯¸ì²¼" };
 	printf("{ %d, %s, %s }\n", b.id, b.title, b.author);
 }
+
+
 
 struct account {
 	int number;
 	char name[20];
 	int balance;
 };
+
 int p4() {
-	struct account ac = { 1, "È«±æµ¿", 100000 };
+	struct account ac = { 1, "í™ê¸¸ë™", 100000 };
 	printf("{ %d, %s, %d }\n", ac.number, ac.name, ac.balance);
 }
+
+
+
 struct date {
 	int year, month, day;
 };
+
 struct email {
 	char title[20];
 	char sender[20];
@@ -99,26 +112,31 @@ struct email {
 	struct date dat;
 	int pri;
 };
-int p5() {
-	struct email em = { "¾ÈºÎ ¸ŞÀÏ", "chulsoo@hankuk.ac.kr", "hsh@hankuk.ac.kr",
-	"¾È³çÇÏ½Ê´Ï±î? º°ÀÏ ¾øÀ¸½ÅÁö¿ä?", {2020, 12,03},1 };
 
-	printf("Á¦¸ñ : %s\n", em.title);
-	printf("¼ö½ÅÀÚ: %s\n¹ß½ÅÀÚ: %s\n", em.sender, em.receiver);
-	printf("³»¿ë : %s\n", em.content);
-	printf("³¯Â¥ : %d / %d / %d\n", em.dat.year, em.dat.month, em.dat.day);
-	printf("¿ì¼±¼øÀ§ : %d\n", em.pri);
+int p5() {
+	struct email em = { "ì•ˆë¶€ ë©”ì¼", "chulsoo@hankuk.ac.kr", "hsh@hankuk.ac.kr",
+	"ì•ˆë…•í•˜ì‹­ë‹ˆê¹Œ? ë³„ì¼ ì—†ìœ¼ì‹ ì§€ìš”?", {2020, 12,03},1 };
+
+	printf("ì œëª© : %s\n", em.title);
+	printf("ìˆ˜ì‹ ì: %s\në°œì‹ ì: %s\n", em.sender, em.receiver);
+	printf("ë‚´ìš© : %s\n", em.content);
+	printf("ë‚ ì§œ : %d / %d / %d\n", em.dat.year, em.dat.month, em.dat.day);
+	printf("ìš°ì„ ìˆœìœ„ : %d\n", em.pri);
 }
+
+
 
 typedef struct{
 	double real, imag;
 }COMPLEX;
+
 COMPLEX complex_add(COMPLEX c1, COMPLEX c2) {
 	COMPLEX c;
 	c.real = c1.real + c2.real;
 	c.imag = c1.imag + c2.imag;
 	return c;
 }
+
 int p6() {
 
 	COMPLEX c1 = { 1.0,2.0 };
@@ -131,19 +149,21 @@ int p6() {
 	printf("%lf + l%fi\n", c3.imag, c3.real);
 }
 
+
+
 int equal(POINT *p1, POINT *p2) {
 	if (p1->x == p2->y)
 		if (p1->y == p2->y)
 			return 1;
 		else return 0;
 	else return 0;
-
 }
+
 int p7() {
 	POINT p1, p2;
-	printf("ÁÂÇ¥¸¦ ÀÔ·ÂÇÏ½Ã¿À(x y) : ");
+	printf("ì¢Œí‘œë¥¼ ì…ë ¥í•˜ì‹œì˜¤(x y) : ");
 	scanf_s("%d %d", &p1.x, &p1.y);
-	printf("ÁÂÇ¥¸¦ ÀÔ·ÂÇÏ½Ã¿À(x y) : ");
+	printf("ì¢Œí‘œë¥¼ ì…ë ¥í•˜ì‹œì˜¤(x y) : ");
 	scanf_s("%d %d", &p2.x, &p2.y);
 
 	if (equal(&p1, &p2))
@@ -151,6 +171,8 @@ int p7() {
 	else
 		printf("(%d, %d) != (%d, %d)\n", p1.x, p1.y, p2.x, p2.y);
 }
+
+
 
 int quadrant(POINT p) {
 	if (p.x > 0)
@@ -160,53 +182,66 @@ int quadrant(POINT p) {
 		if (p.y > 0)return 2;
 		else return 3;
 }
+
 int p8() {
 	POINT p;
-	printf("ÁÂÇ¥¸¦ ÀÔ·ÂÇÏ½Ã¿À(x y): ");
+	printf("ì¢Œí‘œë¥¼ ì…ë ¥í•˜ì‹œì˜¤(x y): ");
 	scanf_s("%d %d", &p.x, &p.y);
 	
-	printf("(%d, %d)ÀÇ »çºĞ¸é: %d\n", p.x, p.y, quadrant(p));
+	printf("(%d, %d)ì˜ ì‚¬ë¶„ë©´: %d\n", p.x, p.y, quadrant(p));
 }
+
+
 
 #define PI 3.141592
 typedef struct{
 	POINT center;
 	double radius;
 }CIRCLE;
+
 double area(CIRCLE c) {
 	return PI * c.radius * c.radius;
 }
+
 double perimeter(CIRCLE c) {
 	return 2 * PI * c.radius;
 }
+
 int p9(){
 	CIRCLE c;
-	printf("¿øÀÇ Áß½ÉÁ¡ : ");
+	printf("ì›ì˜ ì¤‘ì‹¬ì  : ");
 	scanf_s("%d %d", &c.center.x, &c.center.y);
-	printf("¿øÀÇ ¹İÁö¸§ : ");
+	printf("ì›ì˜ ë°˜ì§€ë¦„ : ");
 	scanf_s("%lf", &c.radius);
 
-	printf("¿øÀÇ ¸éÀû=%f, ¿øÀÇ µÑ·¹=%f\n", area(c), perimeter(c));
+	printf("ì›ì˜ ë©´ì =%f, ì›ì˜ ë‘˜ë ˆ=%f\n", area(c), perimeter(c));
 }
+
+
+
 
 typedef struct {
 	char name[100];
 	int calories;
 }FOOD;
+
 int p10() {
 	FOOD food_array[3];
 	int sum = 0;
 
 	for (int i = 0;i < 3;i++) {
-		printf("À½½ÄÀÇ ÀÌ¸§: ");
+		printf("ìŒì‹ì˜ ì´ë¦„: ");
 		scanf_s("%s", food_array[i].name,100);
-		printf("Ä®·Î¸®: ");
+		printf("ì¹¼ë¡œë¦¬: ");
 		scanf_s("%d", &food_array[i].calories);
 		printf("\n");
 		sum += food_array[i].calories;
 	}
-	printf("ÃÑ Ä®·Î¸®=%d\n", sum);
+	printf("ì´ ì¹¼ë¡œë¦¬=%d\n", sum);
 }
+
+
+
 
 typedef struct {
 	int number;
@@ -214,50 +249,58 @@ typedef struct {
 	char tel[20];
 	int age;
 }EMPLOYEE;
+
 int p11() {
 	srand((unsigned)time(NULL));
 
 	EMPLOYEE arr[10] = {
-	{1,"È«±æµ¿1", "010-0000-0000", rand() % 100 },
-	{2, "È«±æµ¿2", "010-0000-0001", rand() % 100 },
-	{3, "È«±æµ¿3", "010-0000-0002", rand() % 100 },
-	{4, "È«±æµ¿4", "010-0000-0003", rand() % 100 },
-	{5, "È«±æµ¿5", "010-0000-0004", rand() % 100 },
-	{6, "È«±æµ¿6", "010-0000-0005", rand() % 100 },
-	{7, "È«±æµ¿7", "010-0000-0006", rand() % 100 },
-	{8, "È«±æµ¿8", "010-0000-0007", rand() % 100 },
-	{9, "È«±æµ¿9", "010-0000-0008", rand() % 100 },
-	{10, "È«±æµ¿10", "010-0000-0009", rand() % 100 }	};
+	{1,"í™ê¸¸ë™1", "010-0000-0000", rand() % 100 },
+	{2, "í™ê¸¸ë™2", "010-0000-0001", rand() % 100 },
+	{3, "í™ê¸¸ë™3", "010-0000-0002", rand() % 100 },
+	{4, "í™ê¸¸ë™4", "010-0000-0003", rand() % 100 },
+	{5, "í™ê¸¸ë™5", "010-0000-0004", rand() % 100 },
+	{6, "í™ê¸¸ë™6", "010-0000-0005", rand() % 100 },
+	{7, "í™ê¸¸ë™7", "010-0000-0006", rand() % 100 },
+	{8, "í™ê¸¸ë™8", "010-0000-0007", rand() % 100 },
+	{9, "í™ê¸¸ë™9", "010-0000-0008", rand() % 100 },
+	{10, "í™ê¸¸ë™10", "010-0000-0009", rand() % 100 }	};
 
 	for (int i = 0;i < 10;i++)
 		if (arr[i].age >= 20 && arr[i].age <= 30)
-			printf("ÀÌ¸§=%s ³ªÀÌ=%d\n", arr[i].name, arr[i].age);
+			printf("ì´ë¦„=%s ë‚˜ì´=%d\n", arr[i].name, arr[i].age);
 }
+
+
 
 typedef struct {
 	char name[10];
 	char homtel[20];
 	char ptel[20];
 }PERSON;
+
 int p12() {
 	PERSON list[3];
 	char answer[20];
 
 	for (int i = 0;i < 3;i++) {
-		printf("ÀÌ¸§À» ÀÔ·ÂÇÏ½Ã¿À: ");
+		printf("ì´ë¦„ì„ ì…ë ¥í•˜ì‹œì˜¤: ");
 		scanf_s("%s", list[i].name, 10);
-		printf("ÁıÀüÈ­¹øÈ£¸¦ ÀÔ·ÂÇÏ½Ã¿À: ");
+		printf("ì§‘ì „í™”ë²ˆí˜¸ë¥¼ ì…ë ¥í•˜ì‹œì˜¤: ");
 		scanf_s("%s", list[i].homtel, 20);
-		printf("ÈŞ´ëÆù¹øÈ£¸¦ ÀÔ·ÂÇÏ½Ã¿À: ");
+		printf("íœ´ëŒ€í°ë²ˆí˜¸ë¥¼ ì…ë ¥í•˜ì‹œì˜¤: ");
 		scanf_s("%s", list[i].ptel, 20);
 	}
 
-	printf("°Ë»öÇÒ ÀÌ¸§À» ÀÔ·ÂÇÏ½Ã¿À : ");
+	printf("ê²€ìƒ‰í•  ì´ë¦„ì„ ì…ë ¥í•˜ì‹œì˜¤ : ");
 	scanf_s("%s", answer, 20);
 	for (int i = 0;i < 3;i++)
 		if (strcmp(answer, list[i].name) == 0)
-			printf("ÁıÀüÈ­¹øÈ£ : %s\nÈŞ´ëÆù¹øÈ£ : %s\n", list[i].homtel, list[i].ptel);
+			printf("ì§‘ì „í™”ë²ˆí˜¸ : %s\níœ´ëŒ€í°ë²ˆí˜¸ : %s\n", list[i].homtel, list[i].ptel);
 }
+
+
+
+enum type { TRI, REC, CIRC };
 
 typedef struct {
 	int type;
@@ -267,38 +310,42 @@ typedef struct {
 		struct { double radius; }circle;
 	} data;
 }shape;
-enum type { TRI, REC, CIRC };
+
 int p13() {
 	shape s;
 	enum type type;
 
-	printf("µµÇüÀÇ Å¸ÀÔÀ» ÀÔ·ÂÇÏ½Ã¿À(0, 1, 2) : ");
+	printf("ë„í˜•ì˜ íƒ€ì…ì„ ì…ë ¥í•˜ì‹œì˜¤(0, 1, 2) : ");
 	scanf_s("%d", &type);
 
 	switch (type) {
 	case TRI:
-		printf("¹Øº¯°ú ³ôÀÌÀÇ ±æÀÌ¸¦ ÀÔ·ÂÇÏ½Ã¿À: ");
+		printf("ë°‘ë³€ê³¼ ë†’ì´ì˜ ê¸¸ì´ë¥¼ ì…ë ¥í•˜ì‹œì˜¤: ");
 		scanf_s("%d %d", &s.data.tri.base, &s.data.tri.height);
-		printf("¸éÀûÀº %f\n", 0.5 * s.data.tri.base * s.data.tri.height);
+		printf("ë©´ì ì€ %f\n", 0.5 * s.data.tri.base * s.data.tri.height);
 		break;
 	case REC:
-		printf("°¡·Î¿Í ¼¼·ÎÀÇ ±æÀÌ¸¦ ÀÔ·ÂÇÏ½Ã¿À: ");
+		printf("ê°€ë¡œì™€ ì„¸ë¡œì˜ ê¸¸ì´ë¥¼ ì…ë ¥í•˜ì‹œì˜¤: ");
 		scanf_s("%d %d\n", &s.data.rect.w, &s.data.rect.h);
-		printf("¸éÀûÀº %d\n", s.data.rect.w * s.data.rect.h);
+		printf("ë©´ì ì€ %d\n", s.data.rect.w * s.data.rect.h);
 		break;
 	case CIRC:
-		printf("¹İÁö¸§À» ÀÔ·ÂÇÏ½Ã¿À: ");
+		printf("ë°˜ì§€ë¦„ì„ ì…ë ¥í•˜ì‹œì˜¤: ");
 		scanf_s("%lf", &s.data.circle.radius);
-		printf("¸éÀûÀº %f\n", PI * s.data.circle.radius * s.data.circle.radius);
+		printf("ë©´ì ì€ %f\n", PI * s.data.circle.radius * s.data.circle.radius);
 		break;
 	default:
-		printf("Àß¸ø ÀÔ·Â\n");
+		printf("ì˜ëª» ì…ë ¥\n");
 		break;
 	}
 }
 
+
+
+
 enum choice{ADD=1, PRINT, SEARCH, DELETE, EXIT};
 enum genre{KPOP, POP, CLASSIC, OST};
+
 typedef struct music {
 	char title[20];
 	char artist[20];
@@ -306,44 +353,48 @@ typedef struct music {
 	int genre;
 }MUSIC;
 MUSIC arr[10];
+
 void menu() {
 	printf("===============\n");
-	printf(" 1. Ãß°¡\n 2. Ãâ·Â\n 3. °Ë»ö\n 4. »èÁ¦\n 5. Á¾·á\n");
+	printf(" 1. ì¶”ê°€\n 2. ì¶œë ¥\n 3. ê²€ìƒ‰\n 4. ì‚­ì œ\n 5. ì¢…ë£Œ\n");
 	printf("===============\n");
 }
+
 MUSIC add(MUSIC list[], int size) {
 	MUSIC m;
 	
-	printf("Á¦¸ñÀ» ÀÔ·ÂÇÏ½Ã¿À: ");
+	printf("ì œëª©ì„ ì…ë ¥í•˜ì‹œì˜¤: ");
 	scanf_s("%s", m.title, 20);
-	printf("°¡¼ö¸¦ ÀÔ·ÂÇÏ½Ã¿À: ");
+	printf("ê°€ìˆ˜ë¥¼ ì…ë ¥í•˜ì‹œì˜¤: ");
 	scanf_s("%s", m.artist, 20);
-	printf("À§Ä¡¸¦ ÀÔ·ÂÇÏ½Ã¿À: ");
+	printf("ìœ„ì¹˜ë¥¼ ì…ë ¥í•˜ì‹œì˜¤: ");
 	scanf_s("%s", m.location, 20);
-	printf("Àå¸£¸¦ ÀÔ·ÂÇÏ½Ã¿À(0: °¡¿ä, 1: ÆË, 2: Å¬·¡½Ä, 3: ¿µÈ­À½¾Ç): ");
+	printf("ì¥ë¥´ë¥¼ ì…ë ¥í•˜ì‹œì˜¤(0: ê°€ìš”, 1: íŒ, 2: í´ë˜ì‹, 3: ì˜í™”ìŒì•…): ");
 	scanf_s("%d", &m.genre);
 	
 	return m;
 }
+
 void print(MUSIC list[], int size) {
 	for (int i = 0;i < size;i++) {
 		char genre[20];
 		enum genre type = list[i].genre;
 		switch (type) {
-		case KPOP: strcpy_s(genre, 20, "°¡¿ä");break;
-		case POP: strcpy_s(genre, 20, "ÆË");break;
-		case CLASSIC: strcpy_s(genre, 20, "Å¬·¡½Ä");break;
-		case OST: strcpy_s(genre, 20, "¿µÈ­À½¾Ç");break;
+		case KPOP: strcpy_s(genre, 20, "ê°€ìš”");break;
+		case POP: strcpy_s(genre, 20, "íŒ");break;
+		case CLASSIC: strcpy_s(genre, 20, "í´ë˜ì‹");break;
+		case OST: strcpy_s(genre, 20, "ì˜í™”ìŒì•…");break;
 		default:break;
 		}
-		printf("Á¦¸ñ: %s\n°¡¼ö: %s\nÀ§Ä¡: %s\nÀå¸£: %s\n\n", list[i].title, list[i].artist, list[i].location, genre);
+		printf("ì œëª©: %s\nê°€ìˆ˜: %s\nìœ„ì¹˜: %s\nì¥ë¥´: %s\n\n", list[i].title, list[i].artist, list[i].location, genre);
 	}
 }
+
 void search(MUSIC list[], int size) {
 	char title[20];
 	int check = 0;
 	
-	printf("Ã£°í ½ÍÀº À½¾Ç Á¦¸ñÀ» ÀÔ·ÂÇÏ½Ã¿À: ");
+	printf("ì°¾ê³  ì‹¶ì€ ìŒì•… ì œëª©ì„ ì…ë ¥í•˜ì‹œì˜¤: ");
 	scanf_s("%s", title, 20);
 	
 	for (int i = 0;i < size;i++) {
@@ -353,22 +404,23 @@ void search(MUSIC list[], int size) {
 			check = 1;
 			
 			switch (type) {
-			case KPOP: strcpy_s(genre, 20, "°¡¿ä");break;
-			case POP: strcpy_s(genre, 20, "ÆË");break;
-			case CLASSIC: strcpy_s(genre, 20, "Å¬·¡½Ä");break;
-			case OST: strcpy_s(genre, 20, "¿µÈ­À½¾Ç");break;
+			case KPOP: strcpy_s(genre, 20, "ê°€ìš”");break;
+			case POP: strcpy_s(genre, 20, "íŒ");break;
+			case CLASSIC: strcpy_s(genre, 20, "í´ë˜ì‹");break;
+			case OST: strcpy_s(genre, 20, "ì˜í™”ìŒì•…");break;
 			default:break;
 			}
 
-			printf("%d¹ø¿¡¼­ %s °Ë»ö \n", i, title);
-			printf("\nÁ¦¸ñ: %s\n°¡¼ö: %s\nÀ§Ä¡: %s\nÀå¸£: %s\n\n", list[i].title, list[i].artist, list[i].location, genre);
+			printf("%dë²ˆì—ì„œ %s ê²€ìƒ‰ \n", i, title);
+			printf("\nì œëª©: %s\nê°€ìˆ˜: %s\nìœ„ì¹˜: %s\nì¥ë¥´: %s\n\n", list[i].title, list[i].artist, list[i].location, genre);
 		}
 	}
-	if (check == 0) printf("%s °Ë»ö ½ÇÆĞ\n", title);
+	if (check == 0) printf("%s ê²€ìƒ‰ ì‹¤íŒ¨\n", title);
 }
+
 void delete(MUSIC list[], int size) {
 	char title[20];
-	printf("»èÁ¦ÇÏ°í ½ÍÀº À½¾Ç Á¦¸ñÀ» ÀÔ·ÂÇÏ½Ã¿À: ");
+	printf("ì‚­ì œí•˜ê³  ì‹¶ì€ ìŒì•… ì œëª©ì„ ì…ë ¥í•˜ì‹œì˜¤: ");
 	scanf_s("%s", title, 20);
 	int check = 0, i;
 
@@ -385,29 +437,30 @@ void delete(MUSIC list[], int size) {
 			strcpy_s(list[i].location, 20, list[i + 1].location);
 			list[i].genre = list[i + 1].genre;
 		}
-		printf("\n%s°¡ ¼º°øÀûÀ¸·Î »èÁ¦µÊ\n", title);
+		printf("\n%sê°€ ì„±ê³µì ìœ¼ë¡œ ì‚­ì œë¨\n", title);
 	}
-	else printf("\n%s¸¦ ¸ñ·Ï¿¡¼­ Ã£À» ¼ö ¾øÀ½\n", title);
-	
+	else printf("\n%së¥¼ ëª©ë¡ì—ì„œ ì°¾ì„ ìˆ˜ ì—†ìŒ\n", title);	
 }
+## delete. ë‹¤ì‹œ. êµ¬ì¡°ì²´ ë°”ê¾¸ê¸°
+
 int p14() {
 	menu();
 	int size = 0;
 	while (1) {
 		int choice;
-		printf("\nÁ¤¼ö°ªÀ» ÀÔ·ÂÇÏ½Ã¿À : ");
+		printf("\nì •ìˆ˜ê°’ì„ ì…ë ¥í•˜ì‹œì˜¤ : ");
 		scanf_s("%d", &choice);
 		printf("\n");
 		if (choice == EXIT) break;
 		switch (choice) {
 		case ADD:
 			arr[size] = add(arr, size);
-			printf("À½¾Ç %s°¡ ¼º°øÀûÀ¸·Î Ãß°¡µÊ\n", arr[size].title);
+			printf("ìŒì•… %sê°€ ì„±ê³µì ìœ¼ë¡œ ì¶”ê°€ë¨\n", arr[size].title);
 			size++;
 			break;
 		case PRINT:
 			print(arr, size);
-			printf("¸ğµç À½¾ÇÀÌ ¼º°øÀûÀ¸·Î Ãâ·ÂµÊ\n");
+			printf("ëª¨ë“  ìŒì•…ì´ ì„±ê³µì ìœ¼ë¡œ ì¶œë ¥ë¨\n");
 			break;
 		case SEARCH:
 			search(arr, size);
