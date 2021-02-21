@@ -1,51 +1,24 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#define BIG(x,y) x>y?x:y
-#define MAX(x,y,z) (BIG(x,y) > z ? BIG(x,y) : z)
-int mystery(const char* s1, const char* s2) {
-	while (*s1 == *s2) {
-		if (*s1 == 0) return 5;
-		printf("%s %s\n", s1++, s2++);
-	}
-	return(1);
-}
+
+
 typedef struct student{
 	char name[10];
 	int num1, num2;
 }STU;
-enum color{white, red=3, blue, black=9};
+
 int main(void) {
-	//p1(); // malloc»ç¿ëÇÏ±â p.747
-	//p2(); // ¹®ÀÚ¿­À» À§ÇÑ ¸Ş¸ğ¸® µ¿Àû ÇÒ´ç p,749-50
-	// p3(); // ÀÚ±âÂüÁ¶ ±¸Á¶Ã¼
-	//p4(); // µ¿Àû ±¸Á¶Ã¼ ¹è¿­
+	//p1(); // mallocì‚¬ìš©í•˜ê¸° p.747
+	//p2(); // ë¬¸ìì—´ì„ ìœ„í•œ ë©”ëª¨ë¦¬ ë™ì  í• ë‹¹ p,749-50
+	// p3(); // ìê¸°ì°¸ì¡° êµ¬ì¡°ì²´
+	//p4(); // ë™ì  êµ¬ì¡°ì²´ ë°°ì—´
 	//p5(); // programming #1-7
 	//p6();
 	//p7();
 	//p8();
 	//p9();
 	//p10();
-	/*
-	STU list[3] = { {"KIM",1,2},{"KIMMM", 3,4},{"LEE", 5,6 } };
-	STU* p = list;
-
-	printf("%d\n", mystery(list[0].name, list[1].name));
-	*/
-	int x, y, z;
-	printf("¼¼ Á¤¼ö ÀÔ·Â : ");
-	scanf_s("%d %d %d", &x, &y, &z);
-	printf("ÃÖ´ë°ªÀº %d\n", MAX(x, y, z));
-
-	enum color c;
-	int s = 4;
-	switch (s) {
-	case white:printf("white\n");break;
-	case red:printf("red\n");break;
-	case blue:printf("blue\n");break;
-	case black:printf("black\n");break;
-	default:printf("¾øÀ½\n");break;
-	}
 
 	return 0;
 }
@@ -53,44 +26,44 @@ int main(void) {
 int p1() {
 	int* scores = NULL;
 	int n;
-	printf("ÇĞ»ıÀÇ ¼ö :");
+	printf("í•™ìƒì˜ ìˆ˜ :");
 	scanf_s("%d", &n);
 
 	scores = (int*)malloc(n * sizeof(int));
 	if (scores == NULL) {
-		printf("µ¿Àû ¸Ş¸ğ¸® ÇÒ´ç ¿À·ù\n");
+		printf("ë™ì  ë©”ëª¨ë¦¬ í• ë‹¹ ì˜¤ë¥˜\n");
 		exit(1);
 	}
 
 	printf("================\n");
 	for (int i = 0;i < n;i++) {
-		printf("ÇĞ»ı #%d ¼ºÀû : ", i + 1);
+		printf("í•™ìƒ #%d ì„±ì  : ", i + 1);
 		scanf_s("%d", &scores[i]);
 	}
 	printf("================\n");
 
 	for (int i = 0;i < n;i++)
-		printf("ÇĞ»ı #%d ¼ºÀû : %d\n",i+1, scores[i]);
+		printf("í•™ìƒ #%d ì„±ì  : %d\n",i+1, scores[i]);
 	free(scores);
 }
 
 int p2() {
 	int n;
 	char* arr[10];
-	printf("¸î°³ÀÇ ¹®ÀÚ¿­À» ÀÔ·ÂÇÏ½Ã°Ú½À´Ï±î? :");
+	printf("ëª‡ê°œì˜ ë¬¸ìì—´ì„ ì…ë ¥í•˜ì‹œê² ìŠµë‹ˆê¹Œ? :");
 	scanf_s("%d", &n);
 	getchar();
 
 	for (int i = 0;i < n;i++) {
 		arr[i] = (char*)malloc(sizeof(char) * 100);
 		if (arr[i] == NULL) {
-			printf("µ¿Àû ¸Ş¸ğ¸® ÇÒ´ç ½ÇÆĞ\n");
+			printf("ë™ì  ë©”ëª¨ë¦¬ í• ë‹¹ ì‹¤íŒ¨\n");
 			exit(1);
 		}
 		strcpy_s(arr[i], 100, "test string");
 	}
 	for (int i = 0;i < n;i++)
-		printf("¹®ÀÚ¿­ %d : %s\n", i, arr[i]);
+		printf("ë¬¸ìì—´ %d : %s\n", i, arr[i]);
 	free(arr);
 }
 
@@ -106,10 +79,10 @@ int p3() {
 	int year;
 
 	while (1) {
-		printf("Ã¥ Á¦¸ñ ÀÔ·ÂÇÏ½Ã¿À(Á¾·á´Â ¿£ÅÍ): ");
+		printf("ì±… ì œëª© ì…ë ¥í•˜ì‹œì˜¤(ì¢…ë£ŒëŠ” ì—”í„°): ");
 		gets_s(buffer, SIZE);
 		if (buffer[0] == NULL) break;
-		printf("ÃâÆÇ ¿¬µµ¸¦ ÀÔ·ÂÇÏ½Ã¿À: ");
+		printf("ì¶œíŒ ì—°ë„ë¥¼ ì…ë ¥í•˜ì‹œì˜¤: ");
 		scanf_s("%d", &year);
 		getchar();
 
@@ -146,27 +119,27 @@ int p4() {
 	int size;
 	char fname[SIZE];
 	
-	printf("ÆÄÀÏ ÀÌ¸§À» ÀÔ·ÂÇÏ½Ã¿À: ");
+	printf("íŒŒì¼ ì´ë¦„ì„ ì…ë ¥í•˜ì‹œì˜¤: ");
 	gets_s(fname, SIZE);
 	fopen_s(&fp, fname, "wt");
 	if (fp == NULL) {
-		fprintf(stderr, "ÆÄÀÏÀ» ¿­ ¼ö ¾øÀ½\n");
+		fprintf(stderr, "íŒŒì¼ì„ ì—´ ìˆ˜ ì—†ìŒ\n");
 		exit(1);
 	}
 
-	printf("¸î ÆíÀÌ³ª ÀúÀåÇÏ½Ã°Ú½À´Ï±î? ");
+	printf("ëª‡ í¸ì´ë‚˜ ì €ì¥í•˜ì‹œê² ìŠµë‹ˆê¹Œ? ");
 	scanf_s("%d", &size);
 	getchar();
 	MOVIE* movies = (MOVIE*)malloc(sizeof(MOVIE) * size);
 	if (movies == NULL) {
-		printf("µ¿Àû ¸Ş¸ğ¸® ÇÒ´ç ¿À·ù\n");
+		printf("ë™ì  ë©”ëª¨ë¦¬ í• ë‹¹ ì˜¤ë¥˜\n");
 		exit(1);
 	}
 
 	for (int i = 0;i < size;i++) {
-		printf("¿µÈ­ Á¦¸ñ: ");
+		printf("ì˜í™” ì œëª©: ");
 		gets_s(movies[i].name, SIZE);
-		printf("¿µÈ­ ÆòÁ¡: ");
+		printf("ì˜í™” í‰ì : ");
 		scanf_s("%lf", &movies[i].rating);
 		getchar();
 		fprintf(fp, " %s %f", movies[i].name, movies[i].rating);
@@ -178,7 +151,7 @@ int p4() {
 	MOVIE m;
 
 	printf("===================\n");
-	printf("Á¦¸ñ\tÆòÁ¡\n");
+	printf("ì œëª©\tí‰ì \n");
 	printf("===================\n");
 	while (!feof(fp)) {
 		fscanf_s(fp, " %s %lf", m.name, SIZE, &m.rating);
@@ -195,37 +168,37 @@ int p5() {
 	int* n=NULL;
 	int sum = 0;
 
-	printf("Á¤¼öÀÇ °³¼ö : ");
+	printf("ì •ìˆ˜ì˜ ê°œìˆ˜ : ");
 	scanf_s("%d", &size);
 	n = (int*)malloc(sizeof(int) * size);
 
 	for (int i = 0;i < size;i++) {
-		printf("¾çÀÇ Á¤¼ö¸¦ ÀÔ·ÂÇÏ½Ã¿À: ");
+		printf("ì–‘ì˜ ì •ìˆ˜ë¥¼ ì…ë ¥í•˜ì‹œì˜¤: ");
 		scanf_s("%d", &n[i]);
 		sum += n[i];
 	}
-	printf("ÇÕÀº %dÀÔ´Ï´Ù.\n", sum);
+	printf("í•©ì€ %dì…ë‹ˆë‹¤.\n", sum);
 }
 
 int p6() {
 	char**arr=NULL;
 	int size;
-	printf("¹®ÀÚ¿­ÀÇ °³¼ö: ");
+	printf("ë¬¸ìì—´ì˜ ê°œìˆ˜: ");
 	scanf_s("%d", &size);
 	getchar();
 
-	arr = (char*)malloc(sizeof(char*)*size); // ÀÌÁß Æ÷ÀÎÅÍ size °³¼ö ¸¸Å­ ÇÒ´ç (arr[i]¸¦ °¡¸®Å³ ÁÖ¼Ò)
+	arr = (char*)malloc(sizeof(char*)*size); // ì´ì¤‘ í¬ì¸í„° size ê°œìˆ˜ ë§Œí¼ í• ë‹¹ (arr[i]ë¥¼ ê°€ë¦¬í‚¬ ì£¼ì†Œ)
 	if (arr == NULL) {
-		printf("µ¿Àû ¸Ş¸ğ¸® ÇÒ´ç ¿À·ù\n");
+		printf("ë™ì  ë©”ëª¨ë¦¬ í• ë‹¹ ì˜¤ë¥˜\n");
 		exit(1);
 	}
 	for (int i = 0;i < size;i++) {
-		arr[i] = (char*)malloc(sizeof(char) * 100); // Æ÷ÀÎÅÍ (charÇü °ø°£ 100) ÇÒ´ç(*arr[i]:¹®ÀÚ¿­À» °¡¸®Å³ ÁÖ¼Ò)
+		arr[i] = (char*)malloc(sizeof(char) * 100); // í¬ì¸í„° (charí˜• ê³µê°„ 100) í• ë‹¹(*arr[i]:ë¬¸ìì—´ì„ ê°€ë¦¬í‚¬ ì£¼ì†Œ)
 		if (arr[i] == NULL) {
-			printf("µ¿Àû ¸Ş¸ğ¸® ÇÒ´ç ¿À·ù\n");
+			printf("ë™ì  ë©”ëª¨ë¦¬ í• ë‹¹ ì˜¤ë¥˜\n");
 			exit(1);
 		}
-		printf("¹®ÀÚ¿­À» ÀÔ·ÂÇÏ½Ã¿À: ");
+		printf("ë¬¸ìì—´ì„ ì…ë ¥í•˜ì‹œì˜¤: ");
 		gets(arr[i]);
 	}
 	for (int i = 0;i < size;i++) {
@@ -244,21 +217,21 @@ int p7() {
 	int n;
 	PHONE* p;
 
-	printf("ÁÖ¼ÒÀÇ °³¼ö: ");
+	printf("ì£¼ì†Œì˜ ê°œìˆ˜: ");
 	scanf_s("%d", &n);
 	getchar();
 	p = (PHONE*)malloc(sizeof(PHONE) * n);
 
 	for (int i = 0;i < n;i++) {
-		printf("ÀÌ¸§À» ÀÔ·ÂÇÏ½Ã¿À: ");
+		printf("ì´ë¦„ì„ ì…ë ¥í•˜ì‹œì˜¤: ");
 		gets(p[i].name);
-		printf("¹øÈ£¸¦ ÀÔ·ÂÇÏ½Ã¿À: ");
+		printf("ë²ˆí˜¸ë¥¼ ì…ë ¥í•˜ì‹œì˜¤: ");
 		gets(p[i].tel);
 		printf("\n");
 	}
 
 	printf("=========================\n");
-	printf("ÀÌ¸§\t\tÀüÈ­¹øÈ£\n");
+	printf("ì´ë¦„\t\tì „í™”ë²ˆí˜¸\n");
 	printf("=========================\n");
 	for (int i = 0;i < n;i++)
 		printf("%s\t%s\n", p[i].name, p[i].tel);
@@ -269,16 +242,16 @@ int p7() {
 char* get_word() {
 	char* p = malloc(sizeof(char) * 50);
 	if (p == NULL) {
-		printf("µ¿Àû ¸Ş¸ğ¸® ÇÒ´ç ¿À·ù\n");
+		printf("ë™ì  ë©”ëª¨ë¦¬ í• ë‹¹ ì˜¤ë¥˜\n");
 		exit(1);
 	}
-	printf("´Ü¾î¸¦ ÀÔ·ÂÇÏ½Ã¿À(ÃÖ´ë 50±ÛÀÚ): ");
+	printf("ë‹¨ì–´ë¥¼ ì…ë ¥í•˜ì‹œì˜¤(ìµœëŒ€ 50ê¸€ì): ");
 	gets(p);
 	return p;
 }
 int p8() {
 	char* p = get_word();
-	printf("µ¿Àû ¸Ş¸ğ¸®¿¡ ÀúÀåµÈ ´Ü¾î´Â %sÀÔ´Ï´Ù.\n", p);
+	printf("ë™ì  ë©”ëª¨ë¦¬ì— ì €ì¥ëœ ë‹¨ì–´ëŠ” %sì…ë‹ˆë‹¤.\n", p);
 	free(p);
 }
 
@@ -291,7 +264,7 @@ int p9() {
 	int num;
 
 	while (1) {
-		printf("¾çÀÇ Á¤¼ö¸¦ ÀÔ·ÂÇÏ½Ã¿À(Á¾·á´Â -1): ");
+		printf("ì–‘ì˜ ì •ìˆ˜ë¥¼ ì…ë ¥í•˜ì‹œì˜¤(ì¢…ë£ŒëŠ” -1): ");
 		scanf_s("%d", &num);
 		getchar();
 		if (num == -1)break;
@@ -299,7 +272,7 @@ int p9() {
 
 		p = (struct NODE*)malloc(sizeof(struct NODE));
 		if (p == NULL) {
-			printf("µ¿Àû ¸Ş¸ğ¸® ÇÒ´ç ¿À·ù\n");
+			printf("ë™ì  ë©”ëª¨ë¦¬ í• ë‹¹ ì˜¤ë¥˜\n");
 			exit(1);
 		}
 		p->n = num;
@@ -339,7 +312,7 @@ int p10() {
 	enum choice choice;
 
 	while (1) {
-		printf("¹øÈ£¸¦ ÀÔ·ÂÇÏ½Ã¿À: ");
+		printf("ë²ˆí˜¸ë¥¼ ì…ë ¥í•˜ì‹œì˜¤: ");
 		scanf_s("%d", &choice);
 		getchar();
 		switch (choice) {
@@ -353,9 +326,9 @@ int p10() {
 	}
 }
 void menu_() {
-	printf("¿¬°á ¸®½ºÆ®¸¦ ÀÌ¿ëÇÑ ÀüÈ­ ¹øÈ£ºÎ ¸Ş´º\n");
+	printf("ì—°ê²° ë¦¬ìŠ¤íŠ¸ë¥¼ ì´ìš©í•œ ì „í™” ë²ˆí˜¸ë¶€ ë©”ë‰´\n");
 	printf("-------------------------\n");
-	printf("1. ÃÊ±âÈ­\n2. ÀüÈ­ ¹øÈ£ Ãß°¡\n3. ÀüÈ­ ¹øÈ£ Å½»ö\n4. ÀüÈ­ ¹øÈ£ º¯°æ\n5. ¹øÈ£ ¸ñ·Ï Ãâ·Â\n6. Á¾·á\n");
+	printf("1. ì´ˆê¸°í™”\n2. ì „í™” ë²ˆí˜¸ ì¶”ê°€\n3. ì „í™” ë²ˆí˜¸ íƒìƒ‰\n4. ì „í™” ë²ˆí˜¸ ë³€ê²½\n5. ë²ˆí˜¸ ëª©ë¡ ì¶œë ¥\n6. ì¢…ë£Œ\n");
 	printf("-------------------------\n");
 }
 PHONE* reset(PHONE* list) {
@@ -368,7 +341,7 @@ PHONE* reset(PHONE* list) {
 		p = next;
 	}
 	list= NULL;
-	printf("\nÀüÈ­ ¹øÈ£ºÎ¸¦ ¼º°øÀûÀ¸·Î ÃÊ±âÈ­ÇÏ¿´½À´Ï´Ù.\n\n");
+	printf("\nì „í™” ë²ˆí˜¸ë¶€ë¥¼ ì„±ê³µì ìœ¼ë¡œ ì´ˆê¸°í™”í•˜ì˜€ìŠµë‹ˆë‹¤.\n\n");
 
 	return list;
 }
@@ -376,12 +349,12 @@ PHONE* add(PHONE* list) {
 	PHONE* new = (PHONE*)malloc(sizeof(PHONE));
 	
 	if (new == NULL) {
-		printf("µ¿Àû ¸Ş¸ğ¸® ÇÒ´ç ¿À·ù\n");
+		printf("ë™ì  ë©”ëª¨ë¦¬ í• ë‹¹ ì˜¤ë¥˜\n");
 		exit(1);
 	}
 
-	printf("ÀÌ¸§ : "); gets(new->name);
-	printf("¹øÈ£ : ");gets(new->tel);
+	printf("ì´ë¦„ : "); gets(new->name);
+	printf("ë²ˆí˜¸ : ");gets(new->tel);
 
 	if (list == NULL) {
 		new->link = NULL;
@@ -391,33 +364,33 @@ PHONE* add(PHONE* list) {
 		new->link=list->link;
 		list->link = new;
 	}
-	printf("\n%s°¡ ¸ñ·Ï¿¡ ¼º°øÀûÀ¸·Î Ãß°¡µÇ¾ú½À´Ï´Ù.\n\n", new->name);
+	printf("\n%sê°€ ëª©ë¡ì— ì„±ê³µì ìœ¼ë¡œ ì¶”ê°€ë˜ì—ˆìŠµë‹ˆë‹¤.\n\n", new->name);
 
 	return list;
 }
 void search(PHONE* list) {
 	int check = 0;
 	char name[10];
-	printf("Å½»öÇÒ ÀÌ¸§ : "); gets_s(name,10);
+	printf("íƒìƒ‰í•  ì´ë¦„ : "); gets_s(name,10);
 
 	PHONE* p=list;
 	while (p != NULL) {
 		if (strcmp(p->name, name) == 0) {
-			printf("%sÀÇ ¹øÈ£ : %s\n", name, p->tel);
+			printf("%sì˜ ë²ˆí˜¸ : %s\n", name, p->tel);
 			check = 1;
 			break;
 		}
 		p = p->link;
 	}
-	if (check == 0) printf("\n¸ñ·Ï¿¡¼­ %s Å½»ö ½ÇÆĞ\n\n", name);
+	if (check == 0) printf("\nëª©ë¡ì—ì„œ %s íƒìƒ‰ ì‹¤íŒ¨\n\n", name);
 
 }
 PHONE* change(PHONE* list) {
 	PHONE* change = (PHONE*)malloc(sizeof(PHONE));
 	int check = 0;
 	
-	printf("Å½»öÇÒ ÀÌ¸§ : "); gets(change->name);
-	printf("º¯°æÇÒ ¹øÈ£ : "); gets(change->tel);
+	printf("íƒìƒ‰í•  ì´ë¦„ : "); gets(change->name);
+	printf("ë³€ê²½í•  ë²ˆí˜¸ : "); gets(change->tel);
 
 	PHONE* p = list, * prev = NULL;
 	while (p != NULL) {
@@ -430,7 +403,7 @@ PHONE* change(PHONE* list) {
 				change->link = p->link;
 				prev->link = change;
 			}
-			printf("\n%sÀÇ ¹øÈ£´Â %s¿¡¼­ %s·Î º¯°æµÇ¾ú½À´Ï´Ù.\n\n", change->name, p->tel, change->tel);
+			printf("\n%sì˜ ë²ˆí˜¸ëŠ” %sì—ì„œ %së¡œ ë³€ê²½ë˜ì—ˆìŠµë‹ˆë‹¤.\n\n", change->name, p->tel, change->tel);
 			check = 1;
 			free(p);
 			break;
@@ -438,7 +411,7 @@ PHONE* change(PHONE* list) {
 		prev = p;
 		p = p->link;
 		}
-	if (check == 0) printf("\n¸ñ·Ï¿¡¼­ %s Å½»ö ½ÇÆĞ\n\n", change->name);
+	if (check == 0) printf("\nëª©ë¡ì—ì„œ %s íƒìƒ‰ ì‹¤íŒ¨\n\n", change->name);
 
 	return list;
 }
@@ -450,12 +423,12 @@ void print(PHONE* list) {
 	if (list != NULL) {
 		check = 1;
 		while (p != NULL) {
-			printf("< %d¹ø >\n", ++n);
-			printf("ÀÌ¸§: %s, ¹øÈ£ : %s\n", p->name, p->tel);
+			printf("< %dë²ˆ >\n", ++n);
+			printf("ì´ë¦„: %s, ë²ˆí˜¸ : %s\n", p->name, p->tel);
 			p = p->link;
 		}
 	}
 
-	if (check == 1)printf("\n¸ñ·ÏÀ» ¼º°øÀûÀ¸·Î Ãâ·ÂÇÏ¿´À½\n\n");
-	else printf("¸ñ·Ï¿¡ ÀúÀåµÈ ¹øÈ£°¡ ¾øÀ½\n\n");
+	if (check == 1)printf("\nëª©ë¡ì„ ì„±ê³µì ìœ¼ë¡œ ì¶œë ¥í•˜ì˜€ìŒ\n\n");
+	else printf("ëª©ë¡ì— ì €ì¥ëœ ë²ˆí˜¸ê°€ ì—†ìŒ\n\n");
 }
