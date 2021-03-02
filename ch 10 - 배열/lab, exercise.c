@@ -1,20 +1,19 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
 #define SIZE 5
 
 int main(void) {
 
 	//lab , exercise
-	//p1();
-	//p2();
-	//p3();
-	//p4();
-	p6();
+	
+	p1(); // ì¢Œì„ ì˜ˆì•½ í”„ë¡œê·¸ë¨
+	p2(); // ë°°ì—´ ìš”ì†Œë“¤ì˜ í‰ê·  êµ¬í•˜ê¸°
+	p3(); // ë°°ì—´ - 
 	
 	return 0;
 }
-int p3() {
+
+
+int p1() {
 	int a[SIZE] = { 0 };
 	char ans;
 	int num;
@@ -25,10 +24,10 @@ int p3() {
 		a[SIZE] = i;
 	while (1)
 	{
-		printf("ÁÂ¼®À» ¿¹¾àÇÏ½Ã°Ú½À´Ï±î?(y ¶Ç´Â n): ");
+		printf("ì¢Œì„ì„ ì˜ˆì•½í•˜ì‹œê² ìŠµë‹ˆê¹Œ?(y ë˜ëŠ” n): ");
 		scanf_s(" %c", &ans);
 		if (ans == 'n') break;
-		printf("¸î ¸í ¿¹¾à ÇÏ½Ã°Ú½À´Ï±î? : ");
+		printf("ëª‡ ëª… ì˜ˆì•½ í•˜ì‹œê² ìŠµë‹ˆê¹Œ? : ");
 		scanf_s("%d", &ppl);
 		printf("------------------\n");
 		for (int i = 0;i < SIZE;i++)
@@ -36,23 +35,25 @@ int p3() {
 		printf("------------------\n");
 		for (int i = 0;i < SIZE;i++)
 			printf("%d ", b[i]);
-		printf("¸î¹øÂ° ÁÂ¼® ¿¹¾à? : ");
+		printf("ëª‡ë²ˆì§¸ ì¢Œì„ ì˜ˆì•½? : ");
 		for (int i = 0;i < ppl;i++)
 		{
-			printf("%d¹ø¤Š »ç¶÷: ", i + 1);
+			printf("%dë²ˆÂŠ ì‚¬ëŒ: ", i + 1);
 			scanf_s("%d", &num);
 			if (a[num - 1] == 0) {
 				a[num - 1] == 1;
-				printf("¿¹¾àµÇ¾ú½À´Ï´Ù.\n");
+				printf("ì˜ˆì•½ë˜ì—ˆìŠµë‹ˆë‹¤.\n");
 			}
 			else {
-				printf("ÀÌ¹Ì ¿¹¾àµÈ ÀÚ¸®ÀÔ´Ï´Ù. Ã³À½ºÎÅÍ ´Ù½Ã\n");
+				printf("ì´ë¯¸ ì˜ˆì•½ëœ ìë¦¬ì…ë‹ˆë‹¤. ì²˜ìŒë¶€í„° ë‹¤ì‹œ\n");
 				break;
 			}
 		}
 	}
 	return 0;
 }
+
+
 
 int get_average(int n[], int size) {
 
@@ -61,17 +62,20 @@ int get_average(int n[], int size) {
 		sum += n[i];
 	return sum/size;
 }
-int p5()
+
+int p2()
 {
 	int scores[SIZE] = {1,2,3,4,5};
 	int avg;
 
 	avg = get_average(scores, SIZE);
-	printf("Æò±ÕÀº %dÀÔ´Ï´Ù.\n", avg);
+	printf("í‰ê· ì€ %dì…ë‹ˆë‹¤.\n", avg);
 	return 0;
 }
 
-int p6() {
+
+
+int p3() {
 	int list[SIZE] = { 6,2,9,12,1 };
 	int i, j, least, tmp;
 
