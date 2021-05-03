@@ -1,5 +1,6 @@
 # C_language
-Studying C, a functional programming language, using Visual Studio 2019 for an IDE
+Studying C, a functional programming language, using Visual Studio 2019 for an IDE <br>
+📚 C언어 Express
 
 <br><hr>
 
@@ -7,6 +8,7 @@ Studying C, a functional programming language, using Visual Studio 2019 for an I
 
 #### <string.h> 헤더 파일의 문자열 처리 라이브러리 함수
 <br>
+
 
  _size_t strlen(const char *str);_
 
